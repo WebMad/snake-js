@@ -14,17 +14,6 @@ function switchFoodCoords() {
     food.y = y;
 }
 
-
-//устанавливает новое значение счета
-function setScore(score) {
-    game.score = score;
-    game.bestScore = Math.max(game.score, game.bestScore);
-    document.getElementById('score').innerText = game.score;
-    document.getElementById('bestScore').innerText = game.bestScore;
-}
-
-
-
 //вставить на место "//место для вставки логики поедания яблок"
 if (newHead.x === food.x && newHead.y === food.y) {//детект соприкосновения с едой
     switchFoodCoords();//смена координат еды

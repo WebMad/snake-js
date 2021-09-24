@@ -14,6 +14,6 @@ snake.body.forEach((coords, i) => {
 
 ctx.drawImage(appleImage, food.x * box, food.y * box, box, box);//рисуем яблоко
 
-if (game.isStart || !game.isPause) {//прежде чем переходить к следующему кадру
+if (game.isStart) {//прежде чем переходить к следующему кадру
     //место для вызова следующего кадра
 }

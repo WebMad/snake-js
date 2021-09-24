@@ -14,6 +14,17 @@ const bounds = {
     },
 };
 
+/**
+ * Получить рандомное целое число в диапозоне от min до max
+ * @param min
+ * @param max
+ * @returns {number}
+ */
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
+
 //координаты еды
 const food = {
     x: randomInteger(bounds.x.min, bounds.x.max),
@@ -33,6 +44,14 @@ const game = {
 let snake;//информация о змейке
 
 let move_interval;//отвечает за движение змейки и детект коллизий
+
+//устанавливает новое значение счета
+function setScore(score) {
+    game.score = score;
+    game.bestScore = Math.max(game.score, game.bestScore);
+    document.getElementById('score').innerText = game.score;
+    document.getElementById('bestScore').innerText = game.bestScore;
+}
 
 /**
  * Установка значений по-умолчанию
