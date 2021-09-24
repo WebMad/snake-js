@@ -50,5 +50,7 @@ header {
 }
 
 canvas {
+    width: 700px;
+    height: 600px;
     border-radius: 20px;
 }

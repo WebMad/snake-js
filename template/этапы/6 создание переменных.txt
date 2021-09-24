@@ -1,0 +1,57 @@
+<-- js -->
+const box = 50; //размер одного блока
+
+
+//границы, за которые змейка заползать не может
+const bounds = {
+    x: {
+        min: 1,
+        max: 12,
+    },
+    y: {
+        min: 1,
+        max: 10,
+    },
+};
+
+//координаты еды
+const food = {
+    x: randomInteger(bounds.x.min, bounds.x.max),
+    y: randomInteger(bounds.y.min, bounds.y.max),
+};
+
+const appleImage = new Image();
+appleImage.src = "img/apple.png"; //еда
+
+//информация о текущей игре
+const game = {
+    isStart: false,
+    bestScore: 0,
+    score: 0,
+};
+
+let snake;//информация о змейке
+
+let move_interval;//отвечает за движение змейки и детект коллизий
+
+/**
+ * Установка значений по-умолчанию
+ */
+function setDefaults() {
+    snake = {
+        x: 2,
+        y: 5,
+        direction: 'right',
+        switch_dir: false,
+        body: [
+            {
+                x: 2,
+                y: 5,
+            },
+        ]
+    };
+
+    game.isStart = false;
+    setScore(0);
+}
+setDefaults();

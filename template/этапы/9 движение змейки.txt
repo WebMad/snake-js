@@ -1,0 +1,46 @@
+<-- js -->
+/**
+ * Получить рандомное целое число в диапозоне от min до max
+ * @param min
+ * @param max
+ * @returns {number}
+ */
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
+
+//заставляет змейка двигаться и детектит коллизии
+function move() {
+
+    //движение по направлению
+    switch (snake.direction) {
+        case 'right':
+            snake.x += 1;
+            break;
+        case 'left':
+            snake.x -= 1;
+            break;
+        case 'up':
+            snake.y -= 1;
+            break;
+        case 'down':
+            snake.y += 1;
+            break;
+    }
+
+    //новый элемент змейки
+    let newHead = {
+        x: snake.x,
+        y: snake.y,
+    };
+
+    //место для проверки коллизий
+
+    //место для вставки логики поедания яблок
+
+    snake.switch_dir = false;//смена направления движения змейки завершена
+}
+
+//добавить на место "//место для вставки кода начала движения"
+move_interval = setInterval(move, 100);//создаем интервал, который будет двигать змейку вперед
